@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ESB Art Gallery :: Check Out</title>
+<meta charset="utf-8">
+<link href="artgal.css" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<style>
+fieldset { width: 400px;
+		   border: 2px ridge #ff0000;
+		   padding: 10px;
+		   margin-bottom: 10px;
+		 }
+legend  { font-family: Georgia, "Times New Roman", serif;
+		  font-weight: bold;
+		}
+form {  background-color:#eaeaea;
+		font-family: Arial, sans-serif;
+		padding: 5px;
+		width: 430px;
+		margin: auto;
+	 }
+label 	{ 	float: left;
+			width: 150px; 
+			clear: left;
+			text-align: right; 
+			padding-right: 10px;
+		}
+ #myCalculate 	{ margin-left: 0px; 
+				}
+ td,th 	{	border-style: none;
+			padding:0.5em
+		}
+ table 	{ 	margin:auto;
+			border-style: none;
+		}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<header>
+	<h1><a href="index.html">ESB Art Gallery</a></h1>
+</header>
+<nav>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="activities.html">Activities</a></li>
+		<li><a href="gallery1.html">Gallery</a></li>
+		<li><a href="contacts.html">Contact Us</a></li>
+	</ul>
+</nav>
+<main>
+	<h2>Payment</h2>
+	<form method="post" action="http://webdevbasics.net/scripts/demo.php">
+		<fieldset>
+			
+			<label for="Name On Card">Full Name on card: </label>
+			<input type="text" name="Name On Card" id="NameOnCard" required="required">
+			
+			<label for="Card Number">Card Number: </label>
+			<input type="text" name="Card Number" id="CardNumber" required="required">
+					
+			<label for="Expiry Date">Expiry Date: </label>
+			<input type="date" name="Expiry Date" id="ExpiryDate" required="required">
+		
+			<label for="Security Number">Security Number: </label>
+			<input type="text" name="Security Number" id="SecurityNumber" required="required">
+	
+			<table border="1">
+			<tr>
+			<th><input id="mySubmit" type="submit" value="Submit"></th>
+			<th><input type="reset"></th>
+			</tr>
+			</table>
+	 </fieldset>
+	</form>
+
+</main>
+<footer>
+	Copyright &copy; 2015 <a href=#>ESB@gmail.com</a>
+</footer>
+</div>
+</body>
+</html>
