@@ -45,5 +45,3 @@ create table discounts
   enddate datetime not null,
   FOREIGN KEY (movieid) REFERENCES movies(movieid)
 );
-
-

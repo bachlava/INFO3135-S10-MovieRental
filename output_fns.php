@@ -15,24 +15,39 @@ function do_html_header($title = '') {
   <head>
 	<link rel="stylesheet" href="hbs.css">
     <title><?php echo $title; ?></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <script src="js/login.js"></script>
   </head>
   <body>
   <div id="wrapper">
   <table width="100%" border="0" cellspacing="0" bgcolor="#cccccc">
   <tr>
-  <td rowspan="2">
-  <a href="index.php"></a>
+  <td align="right" valign="middle">
+	<div id="loginContainer">
+                <a href="#" id="loginButton"><span>Login</span><em></em></a>
+                <div style="clear:both"></div>
+                <div id="loginBox">                
+                    <form id="loginForm">
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Email Address</label>
+                                <input type="text" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Sign in" />
+                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                        </fieldset>
+                        <span><a href="#">Forgot your password?</a></span>
+                    </form>
+                </div>
+            </div>
+	
   </td>
-  <td align="right" valign="bottom">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       echo "&nbsp;";
-     } else {
-       echo "Total Items = ".$_SESSION['items'];
-     }
-  ?>
-  </td>
-  <td align="right" rowspan="2" width="135">
+  <td valign="middle"><a href="register.php">Register</a></td>
+  <td align="right" width="135">
   <?php
      if(isset($_SESSION['admin_user'])) {
        display_button('logout.php', 'log-out', 'Log Out');
@@ -46,8 +61,6 @@ function do_html_header($title = '') {
   <?php
      if(isset($_SESSION['admin_user'])) {
        echo "&nbsp;";
-     } else {
-       echo "Total Price = $".number_format($_SESSION['total_price'],2);
      }
   ?>
   </td>
@@ -96,6 +109,8 @@ function do_html_URL($url, $name) {
   <a href="<?php echo $url; ?>"><?php echo $name; ?></a><br />
 <?php
 }
+
+
 
 function display_categories($cat_array) {
   if (!is_array($cat_array)) {
