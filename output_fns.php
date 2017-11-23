@@ -13,21 +13,15 @@ function do_html_header($title = '') {
 ?>
   <html>
   <head>
+	<link rel="stylesheet" href="hbs.css">
     <title><?php echo $title; ?></title>
-    <style>
-      h2 { font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: red; margin: 6px }
-      body { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
-      li, td { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
-      hr { color: #FF0000; width=70%; text-align=center}
-      a { color: #000000 }
-    </style>
   </head>
   <body>
+  <div id="wrapper">
   <table width="100%" border="0" cellspacing="0" bgcolor="#cccccc">
   <tr>
   <td rowspan="2">
-  <a href="index.php"><img src="images/Book-O-Rama.gif" alt="Bookorama" border="0"
-       align="left" valign="bottom" height="55" width="325"/></a>
+  <a href="index.php"></a>
   </td>
   <td align="right" valign="bottom">
   <?php
@@ -59,12 +53,28 @@ function do_html_header($title = '') {
   </td>
   </tr>
   </table>
+<header>
+	<h1><a href="index.php">HBS Movie Rental</a></h1>
+</header>
+<nav>
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="movies.php">Movies</a></li>
+		<li><a href="shopcart1.php">Cart</a></li>
+		<li><a href="contact.php">Contact Us</a></li>
+	</ul>
+</nav>
+<main>
+	<h2>Welcome</h2>
+		<p><span class="esb">HBS Movie Rental</span></p>
+	
+</main>
+</div>
 <?php
-  if($title) {
-    do_html_heading($title);
-  }
 }
+?>
 
+<?php
 function do_html_footer() {
   // print an HTML footer
 ?>
