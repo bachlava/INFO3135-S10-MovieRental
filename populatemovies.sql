@@ -1,3 +1,4 @@
+use movierental;
 
 INSERT INTO `movies` (`movieid`, `title`, `director`, `genre`, `length`, `releasedate`, `imageid`) VALUES
 (1, 'IT', 'Andy Muschietti', 'Horror', 135, '2017-09-08', 'it'),
