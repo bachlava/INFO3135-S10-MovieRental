@@ -1,16 +1,23 @@
+#wrapper 	{	margin-left: auto; 
+				margin-right: auto; 
+				width: 90%; 
+				background-color: #500000; 
+				min-width: 750px; 
+				max-width: 1500px; 
+				box-shadow: 5px 5px 10px; 
+				height: auto; 
+			}
+			
+#login	{
+	height: 30px;
+}			
+
 body 	{ 	background-color: #cccccc;
-			background-image: url();
-			background-repeat: no-repeat;
-			background-position: top center;
-			background-attachment: fixed;
 			color: #333333; 
 			font-family: Verdana, Arial, sans-serif; 
 		}
 		
 header 	{	background-color: #800000; 
-			background-image: url(ESBlogowide.png);	
-			background-repeat: no-repeat; 
-			background-position: right;
 			color: #ffff99; 
 			font-family: "Arial Black", Gadget, sans-serif; 
 		}
@@ -27,31 +34,38 @@ h1 a {	text-decoration: none;
 	}
 	
 nav 	{	font-weight: bold; 
-		float: right; 
-		width: 150px;
-		padding: 0px 0px 0px 0px; 
+		width: 100%;
+		margin: auto;
+		background-color: #000000;
 	}
 	
-nav a 	{ 	text-decoration: none;
-			display: block; 
-			padding: 10px 0px 20px 0px; 
-			border-bottom: 1px solid #ffffff; 
+nav ul 	{	list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-align: center; 
 		}
+	
+nav a 	{ 	text-decoration: none;
+			display: inline-block; 
+			padding: 10px; 
+		}
+		
+nav li 	{	display: inline-block;
+		}
+		
+nav a:hover:not(.active) {	color: #ffcc00;
+							background-color: #900000; 
+						}
+
+.active {
+    background-color: #900000;
+}
 		
 nav a:link 	{ color: #FFFFFF; 
 			}
 			
 nav a:visited 	{ color: #bfbfbf; 
 				}
-				
-nav a:hover 	{	color: #ffcc00;
-				background-color: #900000; 
-			}
-			
-nav ul 	{	list-style-type: none;
-			margin: 0;
-			text-align: center; 
-		}
 		
 h2 	{	border-bottom: 5px solid #804d00;	
 		color: #804d00;
@@ -69,22 +83,11 @@ footer 	{	font-size: 0.70em;
 			margin-right: 170px; 
 			color: #d9d9d9; 
 		}
-		
-#wrapper 	{	margin-left: auto; 
-				margin-right: auto; 
-				width: 90%; 
-				background-color: #330000; 
-				min-width: 750px; 
-				max-width: 1500px; 
-				box-shadow: 5px 5px 10px; 
-				height: auto; 
-			}
 			
 h3	{	color: #800000; 
 	}
 
 main	{	background-color: #FFFFFF; 
-		margin-right: 110px; 
 		padding: 1px 20px 35px 20px;
 		min-height: 300px; 
 	}
@@ -114,35 +117,7 @@ input, textarea 	{	display: block;
 #homeImage 	{	text-align: center;
 				font-family: arial; 
 			}
-			
-.history 	{ 	width: 700px; 
-				height: 150px;
-				border: 3px solid #804d00;
-				padding: 5px;
-				float: right;
-				text-align: center;
-				padding-top: 20px;
-			}
-			
-.history2 	{	width: 700px;
-				height: 150px;
-				border: 3px solid #804d00;
-				padding: 5px;
-				padding-top: 20px; 
-				text-align: center;
-				float: left; 
-			}
-			
-.history3 	{	width: 950px;
-				height: 100px;
-				border: 3px solid #804d00;
-				padding: 5px;
-				padding-top: 10px; 
-				margin-bottom: 20px;
-				text-align: center; 
-				margin-left: auto;
-				margin-right: auto;
-			}
+
 			
 span a:link 	{	color: #101010; 
 			}
@@ -153,42 +128,59 @@ span a:visited	{	color: #663300;
 span a:hover {	color: #ff0000; 
 			}
 
-/* Login Container (default to float:right) */
+.right	{	float: right;
+		}
+			
+#register {
+	float:right;
+	padding: 10px;
+	border:1px solid #ffffff; 
+    -moz-border-radius:3px;
+	margin: 0px 0px 0px 5px;
+}		
+
+#register a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 15px;
+	font-size: 15px;
+}
+	
 #loginContainer {
     position:relative;
-
+	float: right;
     font-size:12px;
+	padding: 5px 0px 0px 0px;
 }
 
-/* Login Button */
+
 #loginButton { 
     display:inline-block;
     float:right;
-    background:#d2e0ea url(images/buttonbg.png) repeat-x; 
-    border:1px solid #899caa; 
-    border-radius:3px;
+    background:#500000; 
+    border:1px solid #ffffff; 
     -moz-border-radius:3px;
     position:relative;
     z-index:30;
     cursor:pointer;
 }
 
-/* Login Button Text */
+
 #loginButton span {
-    color:#445058; 
+    color:#FFFFFF; 
     font-size:14px; 
     font-weight:bold; 
-    text-shadow:1px 1px #fff; 
     padding:7px 29px 9px 10px;
     background:url(images/loginArrow.png) no-repeat 53px 7px;
     display:block
 }
 
 #loginButton:hover {
-    background:url(images/buttonbgHover.png) repeat-x;
+    background-color:#900000;
 }
 
-/* Login Box */
+
 #loginBox {
     position:absolute;
     top:34px;
@@ -197,16 +189,15 @@ span a:hover {	color: #ff0000;
     z-index:29;
 }
 
-/* If the Login Button has been clicked */    
 #loginButton.active {
-    border-radius:3px 3px 0 0;
+	background-color:#900000;
 }
 
 #loginButton.active span {
     background-position:53px -76px;
 }
 
-/* A Line added to overlap the border */
+
 #loginButton.active em {
     position:absolute;
     width:100%;
@@ -215,14 +206,12 @@ span a:hover {	color: #ff0000;
     bottom:-1px;
 }
 
-/* Login Form */
+
 #loginForm {
     width:248px; 
     border:1px solid #899caa;
-    border-radius:3px 0 3px 3px;
-    -moz-border-radius:3px 0 3px 3px;
     margin-top:-1px;
-    background:#d2e0ea;
+    background:#500000;
     padding:6px;
 }
 
@@ -247,7 +236,7 @@ fieldset#body {
     float:left;
     padding:0;
     border:0;
-    *margin:-3px 9px 0 0; /* IE7 Fix */
+    *margin:-3px 9px 0 0; 
 }
 
 #body label {
@@ -263,39 +252,30 @@ fieldset#body {
     margin:0 0 6px 0;
 }
 
-/* Default Input */
+
 #loginForm input {
     width:92%;
     border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
     color:#3a454d;
     font-weight:bold;
     padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
     font-size:12px;
 }
 
-/* Sign In Button */
+
 #loginForm #login {
     width:auto;
     float:left;
     background:#339cdf url(images/loginbuttonbg.png) repeat-x;
     color:#fff;
     padding:7px 10px 8px 10px;
-    text-shadow:0px -1px #278db8;
     border:1px solid #339cdf;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
     margin:0 12px 0 0;
     cursor:pointer;
-    *padding:7px 2px 8px 2px; /* IE7 Fix */
+    *padding:7px 2px 8px 2px; 
 }
 
-/* Forgot your password */
+
 #loginForm span {
     text-align:center;
     display:block;
@@ -303,8 +283,7 @@ fieldset#body {
 }
 
 #loginForm span a {
-    color:#3a454d;
-    text-shadow:1px 1px #fff;
+    color:#FFFF99;
     font-size:12px;
 }
 

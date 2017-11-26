@@ -1,71 +1,60 @@
 <?php
 
 function do_html_header($title = '') {
-  // print an HTML header
-
-  // declare the session variables we want access to inside the function
-  if (!$_SESSION['items']) {
-    $_SESSION['items'] = '0';
-  }
-  if (!$_SESSION['total_price']) {
-    $_SESSION['total_price'] = '0.00';
-  }
+	if (!$_SESSION['items']) {
+		$_SESSION['items'] = '0';
+	}
+	if (!$_SESSION['total_price']) {
+		$_SESSION['total_price'] = '0.00';
+	}
 ?>
-  <html>
-  <head>
-	<link rel="stylesheet" href="hbs.css">
-    <title><?php echo $title; ?></title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
-    <script src="js/login.js"></script>
-  </head>
-  <body>
-  <div id="wrapper">
-  <table width="100%" border="0" cellspacing="0" bgcolor="#cccccc">
-  <tr>
-  <td align="right" valign="middle">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="hbs.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+<script src="js/login.js"></script>
+<title><?php echo $title; ?></title>
+</head>
+<body>
+<?php
+	if(isset($_SESSION['user'])) {
+		echo '<a href="shopcart1.php">View Shopping Cart</a><header>';
+		display_button('logout.php', 'log-out', 'Log Out');
+	} 
+	else {
+?>
+<div id="wrapper">
+<div id="login">
+	<div id="register">
+		<a href="register.php">Register</a>
+	</div>
 	<div id="loginContainer">
-                <a href="#" id="loginButton"><span>Login</span><em></em></a>
-                <div style="clear:both"></div>
-                <div id="loginBox">                
-                    <form id="loginForm">
-                        <fieldset id="body">
-                            <fieldset>
-                                <label for="email">Email Address</label>
-                                <input type="text" name="email" id="email" />
-                            </fieldset>
-                            <fieldset>
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" />
-                            </fieldset>
-                            <input type="submit" id="login" value="Sign in" />
-                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
-                        </fieldset>
-                        <span><a href="#">Forgot your password?</a></span>
-                    </form>
-                </div>
-            </div>
-	
-  </td>
-  <td valign="middle"><a href="register.php">Register</a></td>
-  <td align="right" width="135">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       display_button('logout.php', 'log-out', 'Log Out');
-     } else {
-       display_button('show_cart.php', 'view-cart', 'View Your Shopping Cart');
-     }
-  ?>
-  </tr>
-  <tr>
-  <td align="right" valign="top">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       echo "&nbsp;";
-     }
-  ?>
-  </td>
-  </tr>
-  </table>
+		<a href="#" id="loginButton"><span>Login</span><em></em></a>
+		<div style="clear:both"></div>
+		<div id="loginBox">                
+			<form id="loginForm">
+				<fieldset id="body">
+					<fieldset>
+						<label for="email">Email Address</label>
+						<input type="text" name="email" id="email" />
+					</fieldset>
+					<fieldset>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" />
+					</fieldset>
+					<input type="submit" id="login" value="Sign in" />
+					<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+				</fieldset>
+				<span><a href="#">Forgot your password?</a></span>
+			</form>
+		</div>
+    </div>
+</div>
+<?php
+	}
+?>
 <header>
 	<h1><a href="index.php">HBS Movie Rental</a></h1>
 </header>
@@ -79,15 +68,14 @@ function do_html_header($title = '') {
 </nav>
 <main>
 	<h2>Welcome</h2>
-		<p><span class="esb">HBS Movie Rental</span></p>
+		<p>HBS Movie Rental</p>
 	
 </main>
 </div>
-<?php
-}
-?>
 
 <?php
+}
+
 function do_html_footer() {
   // print an HTML footer
 ?>
