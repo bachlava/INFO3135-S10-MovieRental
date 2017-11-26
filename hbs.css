@@ -126,6 +126,14 @@ span a:hover {	color: #ff0000;
 
 .right	{	float: right;
 		}
+		
+.movie {
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
 			
 #register {
 	display: inline-block;

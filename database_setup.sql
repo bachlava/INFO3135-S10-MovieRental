@@ -10,7 +10,7 @@ create table movies
   genre char(20) not null,
   length int not null,
   releasedate datetime not null,
-  imageid varchar(20) NOT NULL
+  imageid int unsigned not null
 );
 
 create table users
