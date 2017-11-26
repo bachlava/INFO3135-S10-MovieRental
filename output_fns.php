@@ -1,91 +1,101 @@
 <?php
 
 function do_html_header($title = '') {
-  // print an HTML header
-
-  // declare the session variables we want access to inside the function
-  if (!$_SESSION['items']) {
-    $_SESSION['items'] = '0';
-  }
-  if (!$_SESSION['total_price']) {
-    $_SESSION['total_price'] = '0.00';
-  }
+	if (!$_SESSION['items']) {
+		$_SESSION['items'] = '0';
+	}
+	if (!$_SESSION['total_price']) {
+		$_SESSION['total_price'] = '0.00';
+	}
 ?>
-  <html>
-  <head>
-    <title><?php echo $title; ?></title>
-    <style>
-      h2 { font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: red; margin: 6px }
-      body { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
-      li, td { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
-      hr { color: #FF0000; width=70%; text-align=center}
-      a { color: #000000 }
-    </style>
-  </head>
-  <body>
-  <table width="100%" border="0" cellspacing="0" bgcolor="#cccccc">
-  <tr>
-  <td rowspan="2">
-  <a href="index.php"><img src="images/Book-O-Rama.gif" alt="Bookorama" border="0"
-       align="left" valign="bottom" height="55" width="325"/></a>
-  </td>
-  <td align="right" valign="bottom">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       echo "&nbsp;";
-     } else {
-       echo "Total Items = ".$_SESSION['items'];
-     }
-  ?>
-  </td>
-  <td align="right" rowspan="2" width="135">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       display_button('logout.php', 'log-out', 'Log Out');
-     } else {
-       display_button('show_cart.php', 'view-cart', 'View Your Shopping Cart');
-     }
-  ?>
-  </tr>
-  <tr>
-  <td align="right" valign="top">
-  <?php
-     if(isset($_SESSION['admin_user'])) {
-       echo "&nbsp;";
-     } else {
-       echo "Total Price = $".number_format($_SESSION['total_price'],2);
-     }
-  ?>
-  </td>
-  </tr>
-  </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="hbs.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+<script src="js/login.js"></script>
+<title><?php echo $title; ?></title>
+</head>
+<body>
 <?php
-  if($title) {
-    do_html_heading($title);
-  }
+	if(isset($_SESSION['user'])) {
+		echo '<a href="shopcart1.php">View Shopping Cart</a>';
+		display_button('logout.php', 'log-out', 'Log Out');
+	} 
+	else {
+?>
+<div id="wrapper">
+<div id="login">
+	<div id="register">
+		<a href="signup.php">Register</a>
+	</div>
+	<div id="loginContainer">
+		<a href="#" id="loginButton"><span>Login</span><em></em></a>
+		<div style="clear:both"></div>
+		<div id="loginBox">                
+			<form id="loginForm">
+				<fieldset id="body">
+					<fieldset>
+						<label for="email">Email Address</label>
+						<input type="text" name="email" id="email" />
+					</fieldset>
+					<fieldset>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" />
+					</fieldset>
+					<input type="submit" id="login" value="Sign in" />
+					<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+				</fieldset>
+				<span><a href="#">Forgot your password?</a></span>
+			</form>
+		</div>
+    </div>
+</div>
+<?php
+	}
+?>
+<header>
+	<h1><a href="index.php">HBS Movie Rental</a></h1>
+</header>
+<nav>
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="movies.php">Movies</a></li>
+		<li><a href="contact.php">About</a></li>
+	</ul>
+</nav>
+<div id="searchbox">
+<form method="post" action="search.php?go"  id="searchform"> 
+	<input type="text" name="searchstr" id="searchstr" placeholder="Search...">
+	<input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
+</form>
+</div>
+<main>
+<?php
 }
 
 function do_html_footer() {
-  // print an HTML footer
-?>
-  </body>
-  </html>
+?>	</main>
+	</div>
+	</body>
+	</html>
 <?php
 }
 
 function do_html_heading($heading) {
-  // print heading
 ?>
   <h2><?php echo $heading; ?></h2>
 <?php
 }
 
 function do_html_URL($url, $name) {
-  // output URL as link and br
 ?>
   <a href="<?php echo $url; ?>"><?php echo $name; ?></a><br />
 <?php
 }
+
+
 
 function display_categories($cat_array) {
   if (!is_array($cat_array)) {

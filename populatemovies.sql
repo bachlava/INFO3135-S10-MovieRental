@@ -21,4 +21,3 @@ INSERT INTO `movies` (`movieid`, `title`, `director`, `genre`, `length`, `releas
 (18, 'Despicable Me 3', 'Kyle Balda', 'Family', 90, '2017-06-30', 'despicable'),
 (19, 'Almost Friends', 'Jake Goldberger', 'Comedy', 101, '2017-11-17', 'friends'),
 (20, 'Moana', 'Ron Clements', 'Family', 107, '2016-11-23', 'moana');
-
