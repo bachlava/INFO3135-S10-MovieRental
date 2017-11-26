@@ -24,8 +24,8 @@ header 	{	background-color: #800000;
 		
 h1 	{	text-align: center;
 		color: #ffff99;
-		line-height: 300%;  
-		height: 100px; 
+		line-height: 225%;  
+		height: 75px; 
 		margin-bottom: 0; 
 	}
 
@@ -58,31 +58,32 @@ nav a:hover:not(.active) {	color: #ffcc00;
 						}
 
 .active {
-    background-color: #900000;
+    background-color: #700000;
 }
-		
-nav a:link 	{ color: #FFFFFF; 
-			}
 			
-nav a:visited 	{ color: #bfbfbf; 
+nav a:visited 	{ color: #FDFDFD; 
 				}
 		
 h2 	{	border-bottom: 5px solid #804d00;	
 		color: #804d00;
 	}
-	
-.esb 	{	font-size: 1.1em; 
-			color: #802b00;
-		}
-			
-footer 	{	font-size: 0.70em; 
-			font-style: italic; 
-			text-align: center; 
-			padding: 10px; 
-			background-color: #330000; 
-			margin-right: 170px; 
-			color: #d9d9d9; 
-		}
+
+#searchform input {
+	display: inline-block;
+}
+
+#searchstr {
+	width: 50%;
+    border: none;
+    font-size: 17px;
+	padding-left: 10px;
+}
+
+#searchbox {
+	margin: 10px 0px 0px 0px;
+	width: 100%;
+	text-align: center;
+}
 			
 h3	{	color: #800000; 
 	}
@@ -114,11 +115,6 @@ input, textarea 	{	display: block;
 #mySubmit 	{	margin-left: 10em;
 			}	
 			
-#homeImage 	{	text-align: center;
-				font-family: arial; 
-			}
-
-			
 span a:link 	{	color: #101010; 
 			}
 			
@@ -132,6 +128,7 @@ span a:hover {	color: #ff0000;
 		}
 			
 #register {
+	display: inline-block;
 	float:right;
 	padding: 10px;
 	border:1px solid #ffffff; 
@@ -140,11 +137,15 @@ span a:hover {	color: #ff0000;
 }		
 
 #register a {
+	display: inline-block;
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFFFFF;
-	line-height: 15px;
 	font-size: 15px;
+}
+
+#register:hover {
+	background-color:#900000;
 }
 	
 #loginContainer {

@@ -20,7 +20,7 @@ function do_html_header($title = '') {
 <body>
 <?php
 	if(isset($_SESSION['user'])) {
-		echo '<a href="shopcart1.php">View Shopping Cart</a><header>';
+		echo '<a href="shopcart1.php">View Shopping Cart</a>';
 		display_button('logout.php', 'log-out', 'Log Out');
 	} 
 	else {
@@ -28,7 +28,7 @@ function do_html_header($title = '') {
 <div id="wrapper">
 <div id="login">
 	<div id="register">
-		<a href="register.php">Register</a>
+		<a href="signup.php">Register</a>
 	</div>
 	<div id="loginContainer">
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
@@ -62,37 +62,34 @@ function do_html_header($title = '') {
 	<ul>
 		<li><a href="index.php">Home</a></li>
 		<li><a href="movies.php">Movies</a></li>
-		<li><a href="shopcart1.php">Cart</a></li>
-		<li><a href="contact.php">Contact Us</a></li>
+		<li><a href="contact.php">About</a></li>
 	</ul>
 </nav>
-<main>
-	<h2>Welcome</h2>
-		<p>HBS Movie Rental</p>
-	
-</main>
+<div id="searchbox">
+<form method="post" action="search.php?go"  id="searchform"> 
+	<input type="text" name="searchstr" id="searchstr" placeholder="Search...">
+	<input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
+</form>
 </div>
-
+<main>
 <?php
 }
 
 function do_html_footer() {
-  // print an HTML footer
-?>
-  </body>
-  </html>
+?>	</main>
+	</div>
+	</body>
+	</html>
 <?php
 }
 
 function do_html_heading($heading) {
-  // print heading
 ?>
   <h2><?php echo $heading; ?></h2>
 <?php
 }
 
 function do_html_URL($url, $name) {
-  // output URL as link and br
 ?>
   <a href="<?php echo $url; ?>"><?php echo $name; ?></a><br />
 <?php
