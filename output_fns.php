@@ -76,12 +76,25 @@ function do_html_heading($heading) {
 
 function display_search() {
 ?>
- <div id="searchbox">
+<div id="searchbox">
 <form method="post" action="search.php?go"  id="searchform"> 
   <input type="text" name="searchstr" id="searchstr" placeholder="Search...">
   <input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
 </form>
 </div>
 <?php
+}
+
+function test_input($str) {
+  $str = trim($str);
+  $str = stripslashes($str);
+  $str = htmlspecialchars($str);
+  
+  return $str;
+}
+
+function phone_format($str) {
+	$str = preg_replace('/\D+/', '', $str);
+	return $str;
 }
 ?>
