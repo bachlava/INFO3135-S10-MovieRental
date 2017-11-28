@@ -28,7 +28,7 @@ function do_html_body()
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
 		<div style="clear:both"></div>
 		<div id="loginBox">                
-			<form id="loginForm" action="/login.php" method = POST>
+			<form id="loginForm" action="/login.php" method = POS>T
 				<fieldset id="body">
 					<fieldset>
 						<label for="email">Email Address</label>
@@ -39,9 +39,7 @@ function do_html_body()
 						<input type="password" name="password" id="password" />
 					</fieldset>
 					<input type="submit" id="login" value="Sign in" />
-					<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
 				</fieldset>
-				<span><a href="#">Forgot your password?</a></span>
 			</form>
 		</div>
     </div>
@@ -76,12 +74,25 @@ function do_html_heading($heading) {
 
 function display_search() {
 ?>
- <div id="searchbox">
+<div id="searchbox">
 <form method="post" action="search.php?go"  id="searchform"> 
   <input type="text" name="searchstr" id="searchstr" placeholder="Search...">
   <input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
 </form>
 </div>
 <?php
+}
+
+function test_input($str) {
+  $str = trim($str);
+  $str = stripslashes($str);
+  $str = htmlspecialchars($str);
+  
+  return $str;
+}
+
+function phone_format($str) {
+	$str = preg_replace('/\D+/', '', $str);
+	return $str;
 }
 ?>

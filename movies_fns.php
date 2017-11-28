@@ -24,4 +24,5 @@ function display_movies($result) {
 	else {
 		echo "0 matches found";
 	}
-} 
+}
+?>
