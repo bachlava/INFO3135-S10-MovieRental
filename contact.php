@@ -3,9 +3,7 @@ include('output_fns.php');
 session_start();
 do_html_header("HBS Movie Rental");
 do_html_body();
-display_search();
 ?>
-
 	<h2>Interested in a particular piece?</h2>
 	<h3>Make an appointment with us:</h3>
 	<p style="font-size: 90%;">Choose a preferred date of appointment, if we aren't able to comply,<br>we'll contact you via e-mail or phone.</p>
@@ -31,7 +29,6 @@ display_search();
 	<input type="submit" value="Submit" id="mySubmit">
 	</form>
 	<p style="font-size: 80%; font-style: italic;">Required information is marked with an asterisk (*)</p>
-
 <?php
 do_html_footer();
 ?>
