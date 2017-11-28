@@ -12,13 +12,12 @@ function do_html_header($title = '')
 <script src="js/login.js"></script>
 <title><?php echo $title; ?></title>
 </head>
-
 <?php
 }
+
 function do_html_body()
 {
   ?>
-
 <body>
 <div id="wrapper">
 <div id="login">
@@ -29,7 +28,7 @@ function do_html_body()
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
 		<div style="clear:both"></div>
 		<div id="loginBox">                
-			<form id="loginForm" action="/login.php" method = POST>
+			<form id="loginForm" action="/login.php" method = POS>T
 				<fieldset id="body">
 					<fieldset>
 						<label for="email">Email Address</label>
@@ -40,9 +39,7 @@ function do_html_body()
 						<input type="password" name="password" id="password" />
 					</fieldset>
 					<input type="submit" id="login" value="Sign in" />
-					<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
 				</fieldset>
-				<span><a href="#">Forgot your password?</a></span>
 			</form>
 		</div>
     </div>
@@ -75,7 +72,6 @@ function do_html_heading($heading) {
 <?php
 }
 
-
 function display_search() {
 ?>
 <div id="searchbox">
@@ -84,7 +80,6 @@ function display_search() {
   <input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
 </form>
 </div>
-
 <?php
 }
 
