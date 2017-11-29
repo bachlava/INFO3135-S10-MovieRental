@@ -13,6 +13,23 @@ if ($conn->connect_error) {
 if(isset($_SESSION["userid"])) {
 	
 	$userid = $_SESSION["userid"];
+	
+	$sql = "SELECT movieid, returndate FROM orders WHERE userid='" . $userid . "'";
+	$result = $conn -> query($sql);
+	if ($result -> num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$midarr[] = $row["movieid"];
+			$retarr[] = $row["returndate"];
+		}
+		for ($i = 0; $i < count($midarr); $i++) {
+			if(time() < $retarr[$i]) {
+				$sql = "DELETE FROM orders WHERE movieid='" . $midarr[$i] . "'";
+				$result = $conn -> query($sql);
+			}
+		}
+	}
+	
+	
 	$sql = "SELECT * FROM orders LEFT JOIN movies ON orders.movieid = movies.movieid WHERE userid = " . $userid . "";
 	$result = $conn -> query($sql);
 	
@@ -43,8 +60,6 @@ if(isset($_SESSION["userid"])) {
 else {
 	
 	echo "You are not logged in. Cannot view your orders.";
-	
 }
-
 do_html_footer();
 ?>
