@@ -5,10 +5,10 @@ do_html_header("HBS Movie Rental");
 do_html_body();
 display_search();
 ?>
-	<h2>Interested in a particular piece?</h2>
-	<h3>Make an appointment with us:</h3>
-	<p style="font-size: 90%;">Choose a preferred date of appointment, if we aren't able to comply,<br>we'll contact you via e-mail or phone.</p>
-	<form method="post" action="http://webdevbasics.net/scripts/demo.php">
+	<h2>Want to get in touch with us?</h2>
+	<h3>Get in Contact with a HBS Movie Rental Representative</h3>
+	<p style="font-size: 90%;">We'll get back to you via via e-mail or phone as soon as possible.</p>
+	<form action="mailto:john@doe.com" method="post" enctype="text/plain">
 	<label for="myFName">First Name* </label>
 	<input type="text" name="myFName" required="required">
 	
@@ -20,9 +20,6 @@ display_search();
 	
 	<label for="myPhone">Phone* </label>
 	<input type="tel" name="myPhone" required="required">
-	
-	<label for="appDate">Appointment Date: </label>
-	<input type="date" name="appDate" required="required">
 	
 	<label for="myComments">Comments: </label>
 	<textarea name="myComments" id="myComments" rows="4" cols="40"></textarea>

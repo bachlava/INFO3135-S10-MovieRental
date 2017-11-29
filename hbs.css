@@ -369,4 +369,9 @@ input:focus {
 
 #genreform input {
 	display: inline;
+
+}
+.bg-2 {
+    background-color: #474e5d;
+    color: #ffffff;
 }
