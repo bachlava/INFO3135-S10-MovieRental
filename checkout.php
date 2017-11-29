@@ -5,6 +5,10 @@ if(!isset($_SESSION)){session_start();}
 do_html_header("HBS Checkout");
 do_html_body();
 
+if (isset($_SESSION["ordered"])) {
+	unset($_SESSION["ordered"]);
+}
+
 $conn = new mysqli('localhost', 'root', '', 'movierental');
 			
 if ($conn->connect_error) {
@@ -24,7 +28,7 @@ if ($result -> num_rows > 0) {
 			$titarr[] = $row["title"];
 		}
 		echo '<div style="width:100%;text-align:center;"><img src="images/' . $imgarr[0] . '.jpg" width="182" height="268"/><br/>';
-		echo $titarr[0] . '</div><br>';
+        echo $titarr[0] . '</div><br>';
 }
 
 
