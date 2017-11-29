@@ -61,6 +61,37 @@ do_html_body();
   <h3 class="margin">Why Should You Shop With Us?</h3><br>
   <div class="row">
     <div class="col-sm-4">
+      <p>We have the best movies. Believe us. Absolutely tremendous movies</p>
+    </div>
+    <div class="col-sm-4"> 
+      <p>Our prices blow Netflix and movie theatres out of the water.</p>
+    </div>
+    <div class="col-sm-4"> 
+      <p>All movies are hosted on gigabit servers to ensure you have the best viewing experience possible.</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+    
+<?php
+do_html_footer();
+?>
+  </div>
+</div>
+
+<!-- First Container -->
+<div class="container bg-2 text-center">
+  <h3 class="margin">Welcome to HBS Movie Rental</h3>
+  <p>Get ready to experience a service like none other before. Tired of going to the movie theatre every time you want to watch the latest hit movies? Do you wish to enjoy premium HD content with zero buffering and on demand viewing? Well look no further.</p>
+</div>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Why Should You Shop With Us?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
