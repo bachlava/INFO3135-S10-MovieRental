@@ -1,10 +1,9 @@
 <?php
 include('movies_fns.php');
 include('output_fns.php');
+if(!isset($_SESSION)){session_start();}
 do_html_header("HBS Checkout");
 do_html_body();
-
-if(!isset($_SESSION)){session_start();}
 
 $conn = new mysqli('localhost', 'root', '', 'movierental');
 			

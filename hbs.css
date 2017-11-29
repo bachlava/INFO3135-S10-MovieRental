@@ -44,7 +44,7 @@ body 	{ 	background-color: #cccccc;
 	border-radius: 0px;
 	padding: 20px 40px;
 	margin-left: 400px;
-	border: 1px solid #42464b;
+	border: none;
 	border-radius: 6px;
 }
 
@@ -69,7 +69,8 @@ body 	{ 	background-color: #cccccc;
     margin-right: auto;
 }
 		
-header 	{	margin: 10px auto;
+header 	{		padding: 10px 0px 0px 0px;
+			margin: 25px 0px 0px 0px;
 			background-color: #800000; 
 			color: #ffff99; 
 			font-family: "Arial Black", Gadget, sans-serif; 
@@ -79,7 +80,6 @@ h1 	{	text-align: center;
 		color: #ffff99;
 		line-height: 250%;  
 		height: 75px; 
-		margin: 10px auto;
 	}
 
 h1 a {	text-decoration: none;

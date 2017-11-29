@@ -1,9 +1,10 @@
 <?php
 include('output_fns.php');
+require_once("dbcontroller.php");
 session_start();
 do_html_header("HBS Registration");
 do_html_body();
-
+$db_handle = new DBController();
 if(!empty($_POST["register-user"])) {
 	/* Form Required Field Validation */
 	foreach($_POST as $key=>$value) {
@@ -13,10 +14,16 @@ if(!empty($_POST["register-user"])) {
 		}
 		test_input($_POST[$key]);
 	}
+	$query = "SELECT username, email 
+	FROM users WHERE username = '" . $_POST["userName"] . "' OR email = '" . $_POST["userEmail"] . "'";
+	$result = $db_handle->insertQuery($query);
+	if (!empty($result)) {
+		$error_message = 'User Name or Email already exists.'; 
+	}
 	
 	/* Password Matching Validation */
 	if($_POST['password'] != $_POST['confirm_password']){ 
-	$error_message = 'Passwords should be same<br>'; 
+	$error_message = 'Passwords should be the same'; 
 	}
 
 	/* Email Validation */
@@ -27,8 +34,6 @@ if(!empty($_POST["register-user"])) {
 	}
 
 	if(!isset($error_message)) {
-		require_once("dbcontroller.php");
-		$db_handle = new DBController();
 		$query = "INSERT INTO users (username, firstname, lastname, password, email, address, phonenumber) VALUES
 		('" . $_POST["userName"] . "', '" . $_POST["firstName"] . "', '" . $_POST["lastName"] . "', '" . md5($_POST["password"]) . "', '" . $_POST["userEmail"] . "', '" . $_POST["address"] . "', '" . phone_format($_POST["phone"]) . "')";
 		$result = $db_handle->insertQuery($query);
