@@ -3,7 +3,6 @@ include('output_fns.php');
 session_start();
 do_html_header("HBS Movie Rental");
 do_html_body();
-display_search();
 ?>
 	<h2>Interested in a particular piece?</h2>
 	<h3>Make an appointment with us:</h3>
