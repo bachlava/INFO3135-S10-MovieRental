@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) { ?>
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
 		<div style="clear:both"></div>
 		<div id="loginBox">                
-			<form id="loginForm" action="/login.php" method = POS>T
+			<form id="loginForm" action="/login.php" method = "POST">
 				<fieldset id="body">
 					<fieldset>
 						<label for="email">Email Address</label>
