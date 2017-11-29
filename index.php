@@ -5,7 +5,8 @@ do_html_header("HBS Movie Rental");
 do_html_body();
 display_search();
 ?>
-
+<br>
+<section>
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -18,14 +19,14 @@ display_search();
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="http://localhost/project/images/slide1.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="images/slide1.jpg" alt="Los Angeles" style="width:100%;">
           <div class="carousel-caption d-none d-md-block">
     <p>Watch the latest movies in stunning 1080p HD</p>
   </div>
       </div>
 
       <div class="item">
-        <img src="http://localhost/project/images/slide2.jpg" alt="New york" style="width:100%;">
+        <img src="images/slide2.jpg" alt="New york" style="width:100%;">
         <div class="carousel-caption d-none d-md-block">
     <p>Enjoy a full cinematic experience from the comfort of your own home</p>
   </div>
@@ -33,7 +34,7 @@ display_search();
 
 
       <div class="item">
-        <img src="http://localhost/project/images/slide3.jpg" alt="New york" style="width:100%;">
+        <img src="images/slide3.jpg" alt="New york" style="width:100%;">
         <div class="carousel-caption d-none d-md-block">
     <p>A collection of Christmas movies now available for your viewing pleasure</p>
   </div>
