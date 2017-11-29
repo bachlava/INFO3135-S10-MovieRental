@@ -16,58 +16,6 @@ body 	{ 	background-color: #cccccc;
 			color: #333333; 
 			font-family: Verdana, Arial, sans-serif; 
 		}
-
-.error-message {
-	padding: 7px 10px;
-	background: #fff1f2;
-	border: #ffd5da 1px solid;
-	color: #d6001c;
-	border-radius: 4px;
-}
-
-.success-message {
-	padding: 7px 10px;
-	background: #cae0c4;
-	border: #c3d0b5 1px solid;
-	color: #027506;
-	border-radius: 4px;
-}
-
-.demo-table {
-	width: 50%;
-	border-spacing: initial;
-	margin: 0px 0px;
-	word-break: break-word;
-	table-layout: auto;
-	line-height: 1.8em;
-	color: #333;
-	border-radius: 0px;
-	padding: 20px 40px;
-	margin-left: 400px;
-	border: 1px solid #42464b;
-	border-radius: 6px;
-}
-
-.demo-table td {
-	padding: 5px 0px;
-}
-
-.demoInputBox {
-	padding: 5px 30px;
-	border: #a9a9a9 1px solid;
-	border-radius: 4px;
-}
-
-.btnRegister {
-	padding: 10px 30px;
-	background-color: #3367b2;
-	border: 0;
-	color: #FFF;
-	cursor: pointer;
-	border-radius: 4px;
-	margin-left: 275px;
-    margin-right: auto;
-}
 		
 header 	{	background-color: #800000; 
 			color: #ffff99; 
@@ -188,15 +136,6 @@ span a:hover {	color: #ff0000;
 	text-align: center;
 }
 
-.watchbtn {
-	display:inline-block;
-	margin: 0 auto;
-}
-
-iframe {
-	display: block;
-	margin: 0 auto;
-}
 			
 #register {
 	display: inline-block;
@@ -361,17 +300,4 @@ fieldset#body {
 
 input:focus {
     outline:none;
-}
-
-#genreform select {
-	width: 10%;
-}
-
-#genreform input {
-	display: inline;
-
-}
-.bg-2 {
-    background-color: #474e5d;
-    color: #ffffff;
 }

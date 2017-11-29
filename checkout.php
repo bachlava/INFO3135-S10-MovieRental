@@ -1,12 +1,10 @@
 <?php
 include('movie_fns.php');
 include('output_fns.php');
-session_start();
 do_html_header("HBS Movie Rental");
 do_html_body();
 
 if(!isset($_SESSION)){session_start();}
-$_SESSION["userid"] = 1;
 
 $conn = new mysqli('localhost', 'root', '', 'movierental');
 			
@@ -30,6 +28,21 @@ if ($result -> num_rows > 0) {
 		echo $titarr[0];
 }
 
+
+if(!isset($_SESSION["userid"])) {
+	echo "You must be logged in to rent a movie.";
+}
+else {
+	
+	$sql = "SELECT * FROM orders WHERE movieid='" . $movieid . "' AND userid='" . $_SESSION["userid"] . "'";
+	$result = $conn -> query($sql);
+	
+}
+
+if ($result -> num_rows > 0) {
+	echo "You have already ordered this movie.";
+}
+else {
 ?>
 
 <form name="order" method="post" action="order.php">
@@ -67,6 +80,8 @@ if ($result -> num_rows > 0) {
 </table>
 </form>
 <?php
+
+}
 do_html_footer();
 $conn->close();
 ?>
