@@ -2,7 +2,7 @@
 include('output_fns.php');
 include('movies_fns.php');
 session_start();
-do_html_header("HBS Movie Rental");
+do_html_header("HBS Search");
 do_html_body();
 display_search();
 

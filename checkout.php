@@ -1,7 +1,7 @@
 <?php
-include('movie_fns.php');
+include('movies_fns.php');
 include('output_fns.php');
-do_html_header("HBS Movie Rental");
+do_html_header("HBS Checkout");
 do_html_body();
 
 if(!isset($_SESSION)){session_start();}

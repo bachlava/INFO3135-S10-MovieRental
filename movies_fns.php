@@ -20,11 +20,9 @@ function display_movies($result) {
 			echo 'Length: ' . $lenarr[$i] . ' minutes<br/>';
 			echo 'Release Date: ' . $relarr[$i] . '<br/>';
 			
-			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-				display_watch_btn($idarr[$i]);
+			if (isset($_SESSION['username'])) {
+				display_rent_btn($idarr[$i]);
 			}
-			//test watch button
-			display_watch_btn($idarr[$i]);
 			echo '</div>';
 		}
 	}

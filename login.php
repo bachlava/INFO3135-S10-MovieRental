@@ -1,7 +1,7 @@
 <?php
 include('output_fns.php');
 if(!isset($_SESSION)){session_start();}
-do_html_header("HBS Movie Rental");
+do_html_header("HBS Login");
 
 $conn = new mysqli('localhost', 'root', '', 'movierental');
 			
@@ -22,7 +22,7 @@ if((isset($_POST["email"])) && (isset($_POST["password"]))) {
 		
 		$_SESSION["userid"] = $idarr[0];
 		$_SESSION["username"] = $userarr[0];
-		echo "You have successfully logged in.";
+		$login = true;
 	}
 	else {
 		echo "Your login information is incorrect or you have not registered.";
@@ -30,5 +30,6 @@ if((isset($_POST["email"])) && (isset($_POST["password"]))) {
 }
 
 do_html_body();
+if($login==true){echo "<br>You have successfully logged in.";}
 do_html_footer();
 ?>

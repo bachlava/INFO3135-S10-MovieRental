@@ -1,7 +1,7 @@
 <?php
 include('output_fns.php');
 if(!isset($_SESSION)){session_start();}
-do_html_header("HBS Movie Rental");
+do_html_header("HBS My Orders");
 do_html_body();
 
 $conn = new mysqli('localhost', 'root', '', 'movierental');
@@ -31,7 +31,7 @@ if(isset($_SESSION["userid"])) {
 			echo 'Title: ' . $titarr[$i] . '<br/>';
 			echo 'Date Ordered: ' . $ordarr[$i] . '<br/>';
 			echo 'Movie Expires: ' . $retarr[$i] . '<br/>';
-			//display_watch_btn($idarr[$i]);
+			display_watch_btn($midarr[$i]);
 			echo '</div>';
 		}
 	}

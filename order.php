@@ -1,7 +1,7 @@
 <?php
 include('output_fns.php');
 if(!isset($_SESSION)){session_start();}
-do_html_header("HBS Movie Rental");
+do_html_header("HBS Order");
 do_html_body();
 
 $conn = new mysqli('localhost', 'root', '', 'movierental');
@@ -30,8 +30,7 @@ $conn->close();
 ?>
 </br>
 </br>
-<a href="myorders.php">My Orders</a>
-
 <?php
+display_order_btn();
 do_html_footer();
 ?>

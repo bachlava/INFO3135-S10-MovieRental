@@ -69,21 +69,27 @@ body 	{ 	background-color: #cccccc;
     margin-right: auto;
 }
 		
-header 	{	background-color: #800000; 
+header 	{	margin: 10px auto;
+			background-color: #800000; 
 			color: #ffff99; 
 			font-family: "Arial Black", Gadget, sans-serif; 
 		}
 		
 h1 	{	text-align: center;
 		color: #ffff99;
-		line-height: 225%;  
+		line-height: 250%;  
 		height: 75px; 
-		margin-bottom: 0; 
+		margin: 10px auto;
 	}
 
 h1 a {	text-decoration: none;
 		color: #ffff99;
 	}
+
+h1 a:hover {
+	color: #ffff99;
+	text-decoration: none;
+}	
 	
 nav 	{	font-weight: bold; 
 		width: 100%;
@@ -107,6 +113,7 @@ nav li 	{	display: inline-block;
 		
 nav a:hover:not(.active) {	color: #ffcc00;
 							background-color: #900000; 
+							text-decoration: none;
 						}
 
 .active {
@@ -176,6 +183,7 @@ span a:visited	{	color: #663300;
 				}
 			
 span a:hover {	color: #ff0000; 
+				text-decoration: none;
 			}
 
 .right	{	float: right;
@@ -188,7 +196,7 @@ span a:hover {	color: #ff0000;
 	text-align: center;
 }
 
-.watchbtn {
+.btn {
 	display:inline-block;
 	margin: 0 auto;
 }
@@ -217,6 +225,7 @@ iframe {
 
 #register:hover {
 	background-color:#900000;
+	text-decoration: none;
 }
 	
 #loginContainer {
@@ -250,6 +259,7 @@ iframe {
 
 #loginButton:hover {
     background-color:#900000;
+	text-decoration: none;
 }
 
 
