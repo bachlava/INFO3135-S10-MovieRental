@@ -20,6 +20,8 @@ function do_html_body()
   ?>
 <body>
 <div id="wrapper">
+<?php //if user is not logged in
+if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) { ?>
 <div id="login">
 	<div id="register">
 		<a href="signup.php">Register</a>
@@ -28,7 +30,7 @@ function do_html_body()
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
 		<div style="clear:both"></div>
 		<div id="loginBox">                
-			<form id="loginForm" action="/login.php" method = POST>
+			<form id="loginForm" action="/login.php" method = POS>T
 				<fieldset id="body">
 					<fieldset>
 						<label for="email">Email Address</label>
@@ -39,13 +41,16 @@ function do_html_body()
 						<input type="password" name="password" id="password" />
 					</fieldset>
 					<input type="submit" id="login" value="Sign in" />
-					<label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
 				</fieldset>
-				<span><a href="#">Forgot your password?</a></span>
 			</form>
 		</div>
     </div>
 </div>
+<?php 
+}
+else { //display orders
+}
+?>
 <header>
 	<h1><a href="index.php">HBS Movie Rental</a></h1>
 </header>
@@ -76,12 +81,40 @@ function do_html_heading($heading) {
 
 function display_search() {
 ?>
- <div id="searchbox">
+<div id="searchbox">
 <form method="post" action="search.php?go"  id="searchform"> 
   <input type="text" name="searchstr" id="searchstr" placeholder="Search...">
   <input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
 </form>
 </div>
 <?php
+}
+
+function display_watch_btn($id) {
+	?>	<form method="post" action="watch.php">
+		<input type="submit" name="watch_<?php echo $id ?>" value="Watch" class="watchbtn"/>
+		</form>
+<?php 
+}
+
+//placeholder rent button
+function display_rent_btn() {
+	?>	<form method="post" action="order.php">
+		<input type="submit" name="" value="Rent"/>
+		</form>
+<?php 
+}
+
+function test_input($str) {
+  $str = trim($str);
+  $str = stripslashes($str);
+  $str = htmlspecialchars($str);
+  
+  return $str;
+}
+
+function phone_format($str) {
+	$str = preg_replace('/\D+/', '', $str);
+	return $str;
 }
 ?>
