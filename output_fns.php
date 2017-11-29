@@ -33,7 +33,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) { ?>
 		<a href="#" id="loginButton"><span>Login</span><em></em></a>
 		<div style="clear:both"></div>
 		<div id="loginBox">                
-			<form id="loginForm" action="/login.php" method = POS>T
+			<form id="loginForm" action="/login.php" method = "POST">
 				<fieldset id="body">
 					<fieldset>
 						<label for="email">Email Address</label>
@@ -51,76 +51,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != true) { ?>
 </div>
 <?php 
 }
-else { //display orders
-}
-?>
-<header>
-	<h1><a href="index.php">HBS Movie Rental</a></h1>
-</header>
-<nav>
-	<ul>
-		<li><a href="index.php">Home</a></li>
-		<li><a href="movies.php">Movies</a></li>
-		<li><a href="contact.php">About</a></li>
-	</ul>
-</nav>
-<main>
-<?php
-}
-
-function do_html_footer() {
-?>	</main>
-	</div>
-	</body>
-	</html>
-<?php
-}
-
-function do_html_heading($heading) {
-?>
-  <h2><?php echo $heading; ?></h2>
-<?php
-}
-
-function display_search() {
-?>
-<div id="searchbox">
-<form method="post" action="search.php?go"  id="searchform"> 
-  <input type="text" name="searchstr" id="searchstr" placeholder="Search...">
-  <input type="submit" name="searchbtn" id="searchbtn" value="Search"> 
-</form>
-</div>
-<?php
-}
-
-function display_watch_btn($id) {
-	?>	<form method="post" action="watch.php">
-		<input type="submit" name="watch_<?php echo $id ?>" value="Watch" class="watchbtn"/>
-		</form>
-<?php 
-}
-
-//placeholder rent button
-function display_rent_btn() {
-	?>	<form method="post" action="order.php">
-		<input type="submit" name="" value="Rent"/>
-		</form>
-<?php 
-}
-
-function test_input($str) {
-  $str = trim($str);
-  $str = stripslashes($str);
-  $str = htmlspecialchars($str);
-  
-  return $str;
-}
-
-function phone_format($str) {
-	$str = preg_replace('/\D+/', '', $str);
-	return $str;
-}
-?>
 else { //display orders
 }
 ?>
