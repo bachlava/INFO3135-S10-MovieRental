@@ -6,7 +6,7 @@ do_html_header("HBS Movies");
 do_html_body();
 display_search();
 ?>
-
+<br>
 <form method="post" action="movies.php" id="genreform">
 	<label></label>
 	<select name="genre">
