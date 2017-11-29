@@ -25,11 +25,12 @@ if((isset($_POST["email"])) && (isset($_POST["password"]))) {
 		$login = true;
 	}
 	else {
-		echo "Your login information is incorrect or you have not registered.";
+		$failed = true;
 	}
 }
 
 do_html_body();
-if($login==true){echo "<br>You have successfully logged in.";}
+if((isset($login)) && ($login==true)){echo "<br>You have successfully logged in.";}
+if((isset($failed)) && ($login==true)){echo "<br>Your login information is incorrect or you have not registered.";}
 do_html_footer();
 ?>
